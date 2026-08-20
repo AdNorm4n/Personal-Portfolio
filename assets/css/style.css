@@ -810,36 +810,52 @@ main {
 
 .clients {
   margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .clients-list {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 0;
   margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  padding: 25px 0;
+  animation: ticker 15s linear infinite;
+}
+
+.clients-list:hover {
+  animation-play-state: paused;
 }
 
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
+  flex: 0 0 170px;
+  flex-shrink: 0;
+  padding-inline: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clients-item img {
   width: 100%;
-  filter: grayscale(1);
+  filter: grayscale(0);
   transition: var(--transition-1);
 }
 
 .clients-item img:hover {
-  filter: grayscale(0);
+  filter: grayscale(1);
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 
@@ -1395,7 +1411,8 @@ textarea.form-input::-webkit-resizer {
    */
 
   .clients-item {
-    min-width: calc(33.33% - 10px);
+    flex: 0 0 160px;
+    padding-inline: 15px;
   }
 
 
@@ -1672,14 +1689,13 @@ textarea.form-input::-webkit-resizer {
   /* clients */
 
   .clients-list {
-    gap: 50px;
     margin: 0 -30px;
-    padding: 45px;
-    scroll-padding-inline: 45px;
+    padding: 45px 0;
   }
 
   .clients-item {
-    min-width: calc(33.33% - 35px);
+    flex: 0 0 200px;
+    padding-inline: 20px;
   }
 
 
@@ -1985,7 +2001,8 @@ textarea.form-input::-webkit-resizer {
   /* clients */
 
   .clients-item {
-    min-width: calc(25% - 38px);
+    flex: 0 0 240px;
+    padding-inline: 25px;
   }
 
 
