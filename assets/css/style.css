@@ -381,7 +381,7 @@ main {
 }
 
 .info-content .title {
-  color: var(--white-1);
+  color: var(--github-blue);
   background: var(--onyx);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
@@ -489,7 +489,7 @@ main {
 
 
 .social-item .social-link:hover {
-  color: var(--light-gray);
+  color: var(--github-blue);
 }
 
 
