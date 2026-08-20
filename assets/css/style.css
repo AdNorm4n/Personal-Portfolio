@@ -822,7 +822,8 @@ main {
   gap: 0;
   margin: 0 -15px;
   padding: 25px 0;
-  animation: ticker 15s linear infinite;
+  animation: ticker 30s linear infinite;
+  will-change: transform;
 }
 
 .clients-list:hover {
@@ -830,9 +831,9 @@ main {
 }
 
 .clients-item {
-  flex: 0 0 170px;
+  flex: 0 0 120px;
   flex-shrink: 0;
-  padding-inline: 15px;
+  padding-inline: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -850,11 +851,11 @@ main {
 
 @keyframes ticker {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -1410,8 +1411,12 @@ textarea.form-input::-webkit-resizer {
    * client
    */
 
+  .clients-list {
+    animation-duration: 25s;
+  }
+
   .clients-item {
-    flex: 0 0 160px;
+    flex: 0 0 150px;
     padding-inline: 15px;
   }
 
@@ -1691,10 +1696,11 @@ textarea.form-input::-webkit-resizer {
   .clients-list {
     margin: 0 -30px;
     padding: 45px 0;
+    animation-duration: 20s;
   }
 
   .clients-item {
-    flex: 0 0 200px;
+    flex: 0 0 180px;
     padding-inline: 20px;
   }
 
@@ -2000,8 +2006,12 @@ textarea.form-input::-webkit-resizer {
 
   /* clients */
 
+  .clients-list {
+    animation-duration: 15s;
+  }
+
   .clients-item {
-    flex: 0 0 240px;
+    flex: 0 0 220px;
     padding-inline: 25px;
   }
 
